@@ -8,12 +8,11 @@ from sklearn.metrics import accuracy_score
 
 # --- Page Config & Styling ---
 
+import streamlit as st
+
 st.set_page_config(page_title="Rock🪨 vs Mine💣 Classifier", layout="centered")
 
-
-
-
-# --- CSS Styling (only once) ---
+# --- CSS Styling ---
 st.markdown(
     """
     <style>
@@ -29,9 +28,8 @@ st.markdown(
         font-weight: bold;
         margin-bottom: 1rem;
         text-align: center;
-        background: linear-gradient(90deg, #00C6FF, #0072FF);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: white;              
+        text-shadow: 0px 0px 10px rgba(0,0,0,0.3);  /* optional soft glow for better visibility */
     }
 
     .footer {
@@ -51,8 +49,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# --- Single Title Render ---
-st.markdown('<div class="title">🚀 Rock🪨 vs Mine💣 Classifier</div>', unsafe_allow_html=True)
+
+
+
+
 
 
 
