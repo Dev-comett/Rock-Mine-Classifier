@@ -85,7 +85,7 @@ def train_sonar_model(df):
 
 # --- Main App Layout ---
 
-st.markdown('<div class="title">🚀 Rock🪨 vs Mine💣 Classifier</div>', unsafe_allow_html=True)
+st.markdown('<div class="title"> Rock🪨 vs Mine💣 Classifier</div>', unsafe_allow_html=True)
 st.write("This app predicts whether sonar signals reflect a Rock or a Mine.")
 
 # --- Dataset Section ---
