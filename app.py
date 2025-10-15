@@ -81,7 +81,7 @@ st.write(f"**Training Accuracy:** {train_acc:.2f}")
 st.write(f"**Test Accuracy:** {test_acc:.2f}")
 
 # --- Prediction Section ---
-st.selectbox("🔮 Make a Prediction")
+st.expander("🔮 Make a Prediction")
 st.write("Enter values for 60 features below:")
 user_input = []
 cols = st.columns(3)
