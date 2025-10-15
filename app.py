@@ -11,46 +11,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Rock🪨 vs Mine💣 Classifier", layout="centered")
 
-# --- CSS Styling (only once) ---
-st.markdown(
-    """
-    <style>
-    .main {
-        background-color: #F5F5F5; 
-        padding: 2rem; 
-        border-radius: 1rem; 
-        margin-bottom: 4rem;
-    }
 
-    .title {
-        font-size: 3rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        text-align: center;
-        background: linear-gradient(90deg, #00C6FF, #0072FF);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .footer {
-        position: fixed; 
-        left: 0; 
-        bottom: 0; 
-        width: 100%; 
-        background-color: #333333; 
-        color: white; 
-        text-align: center; 
-        padding: 1rem;
-    }
-
-    a { color: #1E88E5; }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-# --- Single Title Render ---
-st.markdown('<div class="title">🚀 Rock🪨 vs Mine💣 Classifier</div>', unsafe_allow_html=True)
 
 
 # --- Title with Gradient ---
