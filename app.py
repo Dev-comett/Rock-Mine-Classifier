@@ -81,26 +81,28 @@ st.write(f"**Training Accuracy:** {train_acc:.2f}")
 st.write(f"**Test Accuracy:** {test_acc:.2f}")
 
 # --- Prediction Section ---
-st.expander("🔮 Make a Prediction")
-st.write("Enter values for 60 features below:")
-user_input = []
-cols = st.columns(3)
-for i in range(60):
-    user_input.append(
-        cols[i % 3].number_input(f"F{i+1}", value=0.0, format="%.5f")
-    )
+# --- Prediction Section ---
+with st.expander("🔮 Make a Prediction", expanded=False):
+    st.write("Enter values for 60 features below:")
+    user_input = []
+    cols = st.columns(3)
 
-if st.button("Predict"):
-    arr = np.array(user_input).reshape(1, -1)
-    pred = model.predict(arr)[0]
-    prob = model.predict_proba(arr).max()
-    label = "Rock 🪨" if pred == 'R' else "Mine 💣"
-    if pred == 'R':
-        st.success(f"Prediction: **{label}** (Confidence: {prob:.2f})")
-    else:
-        st.error(f"Prediction: **{label}** (Confidence: {prob:.2f})")
+    for i in range(60):
+        user_input.append(
+            cols[i % 3].number_input(f"F{i+1}", value=0.0, format="%.5f")
+        )
 
-st.markdown('</div>', unsafe_allow_html=True)
+    if st.button("Predict"):
+        arr = np.array(user_input).reshape(1, -1)
+        pred = model.predict(arr)[0]
+        prob = model.predict_proba(arr).max()
+        label = "Rock 🪨" if pred == 'R' else "Mine 💣"
+
+        if pred == 'R':
+            st.success(f"Prediction: **{label}** (Confidence: {prob:.2f})")
+        else:
+            st.error(f"Prediction: **{label}** (Confidence: {prob:.2f})")
+
 
 # --- Footer ---
 footer_html = '''
